@@ -1,0 +1,31 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      MONGODB_HOST: 172.26.122.130
+    ports:
+      - '3000:3000'
+    networks:
+      - app  
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    ports:
+      - '27017:27017'
+    networks:
+      - app        
+    container_name: mongodb
+    volumes:
+      - mongodb_data:/data/db    
+
+networks:
+  app:
+    driver: bridge
+
+
+volumes:
+  mongodb_data:

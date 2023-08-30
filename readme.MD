@@ -66,8 +66,7 @@ COPY index.html /usr/share/nginx/html/index.html
 </html>
 ```
 
-3. Construa a imagem usando docker build: (opcinal - será necessario se voce executar o docker run inves do compose)
-
+3. Construa a imagem usando docker build: (opcional - necessário apenas se você optar por executar o docker run em vez do docker-compose)
 ```bash
 docker build -t minha-aplicacao-web .
 ```
